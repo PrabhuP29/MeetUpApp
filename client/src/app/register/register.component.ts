@@ -10,7 +10,7 @@ import { AccountService } from '../_Services/account.service';
   styleUrls: ['./register.component.css']
 })
 export class RegisterComponent implements OnInit {
-  @Input() usersFromHomeComponent;
+  // @Input() usersFromHomeComponent;
   @Output() cancelRegister = new EventEmitter();
   @Output() emitName = new EventEmitter();
   name: string = '';
