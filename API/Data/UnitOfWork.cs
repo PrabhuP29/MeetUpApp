@@ -14,6 +14,8 @@ namespace API.Data
             _context = context;
         }
 
+        IPhotoRepository IUnitOfWork.PhotoRepository =>  new PhotoRepository(_context, _mapper);
+
         IUserRepository IUnitOfWork.UserRepository => new UserRepository(_context, _mapper);
 
         IMessageRepository IUnitOfWork.MessageRepository => new MessageRepository(_context, _mapper);

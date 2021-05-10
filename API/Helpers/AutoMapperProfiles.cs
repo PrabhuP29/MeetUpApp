@@ -25,6 +25,9 @@ namespace API.Helpers
                     opt => opt.MapFrom(src => src.Recipient.Photos.FirstOrDefault(x=>x.IsMain).Url));
             //UTC converted applied on builder in the datacontext class, no need of this now
             //CreateMap<DateTime, DateTime>().ConvertUsing(d => DateTime.SpecifyKind(d, DateTimeKind.Utc));
+            CreateMap<Photo, PhotoForApprovalDto>()
+            .ForMember(dest => dest.Username, opt => opt.MapFrom(src => 
+                src.AppUser.UserName));
         }
     }
 }
